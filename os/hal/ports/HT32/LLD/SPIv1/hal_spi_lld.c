@@ -260,7 +260,7 @@ void spi_lld_exchange(SPIDriver *spip, size_t n,
     spip->txptr = txbuf;
     spip->rxptr = rxbuf;
     spip->rxcnt = spip->txcnt = n;
-    spip->SPI->IER = SPI_IER_RXBNEIEN | SPI_IER_TXBEIEN;
+    spip->SPI->IER = SPI_IER_RXBNEIEN | SPI_IER_TXEIEN;
 }
 
 /**
