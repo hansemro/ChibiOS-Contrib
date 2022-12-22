@@ -76,7 +76,7 @@ static void spi_lld_tx(SPIDriver * const spip) {
 
     while (spip->txcnt) {
         sr = spip->SPI->SR;
-        if ((sr & SPI_SR_TXBE) == 0)
+        if ((sr & SPI_SR_TXE) == 0)
             return;
         if (spip->txptr) {
             fd = *spip->txptr++;
